@@ -29,7 +29,7 @@ function mostrarProductos(array)  {
         <p class="pt-2 text-center align-items-center"${producto.cantidad}</p>
         <p class="pt-2 text-center align-items-center">Código ref: ${producto.id}</p>
         <div class=" text-center align-items-center pb-3">
-            <button type="button" class="btn btn-primary agregarAlCarrito">Agregar al carrito</button>
+            <button id="agregarAlCarrito${producto.id}" type="button" class="btn btn-primary">Agregar al carrito</button>
         </div>
         </div>
         `
