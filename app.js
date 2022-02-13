@@ -34,6 +34,13 @@ function mostrarProductos(array)  {
         </div>
         `
     contenedorProductos.appendChild(div)
+
+    let btnAgregar = document.getElementById(`agregarAlCarrito${producto.id}`);
+    // console.log(btnAgregar)
+
+    btnAgregar.addEventListener('click', ()=> {
+        console.log(producto.id)
+    })
     });
 }
 
