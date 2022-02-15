@@ -39,14 +39,38 @@ function mostrarProductos(array)  {
     // console.log(btnAgregar)
 
     btnAgregar.addEventListener('click', ()=> {
-        console.log(producto.id)
+        agregarAlCarrito(producto.id)
     })
     });
 }
 
 
 // FUNCION AGREGAR AL CARRITO
+function agregarAlCarrito(id){
+    let agregarProducto = stockProductos.find(item => item.id == id);
+    console.log(agregarProducto)
 
+    let div = document.createElement('div')
+    div.className = 'productoEnCarrito'
+    div.innerHTML = `
+    <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="${agregarProducto.img}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">${agregarProducto.nombre}</h5>
+          <p class="card-text">ARS ${agregarProducto.precio}</p>
+          <p class="card-text"><small class="text-muted">${agregarProducto.cantidad}</small></p>
+          <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>`
+
+    contenedorCarrito.appendChild(div)
+}
 
 
 
