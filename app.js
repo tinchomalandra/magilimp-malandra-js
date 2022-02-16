@@ -36,7 +36,7 @@ function mostrarProductos(array)  {
     contenedorProductos.appendChild(div)
 
     let btnAgregar = document.getElementById(`agregarAlCarrito${producto.id}`);
-    // console.log(btnAgregar)
+    
 
     btnAgregar.addEventListener('click', ()=> {
         agregarAlCarrito(producto.id)
@@ -48,7 +48,7 @@ function mostrarProductos(array)  {
 // FUNCION AGREGAR AL CARRITO
 function agregarAlCarrito(id){
     let agregarProducto = stockProductos.find(item => item.id == id);
-    console.log(agregarProducto)
+    
 
     carritoDeCompras.push(agregarProducto)
 
@@ -78,8 +78,11 @@ function agregarAlCarrito(id){
     let btnEliminar = document.getElementById(`btnEliminar${agregarProducto.id}`)
 
     btnEliminar.addEventListener('click', () => {
-        console.log(agregarProducto.id)
+        
+        btnEliminar.parentElement.remove()
+        // elimina casi todo, pero no borra la imagen y la suma en el total
         carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != agregarProducto.id)
+        actualizarCarrito()
     })
 }
 
@@ -89,6 +92,7 @@ function agregarAlCarrito(id){
 // FUNCION ACTUALIZAR CARRITO
 
 function actualizarCarrito (){
-    contadorCarrito.innerText = carritoDeCompras.length
+    contadorCarrito.innerText = carritoDeCompras.reduce((acc,el) => (acc + el.unidades),0)
     precioTotal.innerText = carritoDeCompras.reduce((acc,el)=> acc + (el.precio * el.unidades),0)
+
 }
