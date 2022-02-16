@@ -50,6 +50,10 @@ function agregarAlCarrito(id){
     let agregarProducto = stockProductos.find(item => item.id == id);
     console.log(agregarProducto)
 
+    carritoDeCompras.push(agregarProducto)
+
+    actualizarCarrito()
+
     let div = document.createElement('div')
     div.className = 'productoEnCarrito'
     div.innerHTML = `
@@ -63,16 +67,28 @@ function agregarAlCarrito(id){
           <h5 class="card-title">${agregarProducto.nombre}</h5>
           <p class="card-text">ARS ${agregarProducto.precio}</p>
           <p class="card-text"><small class="text-muted">${agregarProducto.cantidad}</small></p>
-          <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+          <button type="button" id="btnEliminar${agregarProducto.id}" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
         </div>
       </div>
     </div>
   </div>`
 
     contenedorCarrito.appendChild(div)
+
+    let btnEliminar = document.getElementById(`btnEliminar${agregarProducto.id}`)
+
+    btnEliminar.addEventListener('click', () => {
+        console.log(agregarProducto.id)
+        carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != agregarProducto.id)
+    })
 }
 
 
 
 
 // FUNCION ACTUALIZAR CARRITO
+
+function actualizarCarrito (){
+    contadorCarrito.innerText = carritoDeCompras.length
+    precioTotal.innerText = carritoDeCompras.reduce((acc,el)=> acc + (el.precio * el.unidades),0)
+}

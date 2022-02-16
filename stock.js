@@ -6,6 +6,7 @@ let stockProductos =
         precio: 79,
         cantidad: "1lt",
         img: 'public/img/lavandina.jpg',
+        unidades: 1,
 },
     {
         id: 02, 
@@ -13,6 +14,7 @@ let stockProductos =
         precio: 79,
         cantidad: "5lts",
         img: 'public/img/detergente.jpg',
+        unidades:1,
     },
     {
         id: 03, 
@@ -20,6 +22,7 @@ let stockProductos =
         precio: 199,
         cantidad: "x5 (1kg)",
         img: 'public/img/pastillas-cloro.jpg',
+        unidades:1,
     },
     {
         id: 04, 
@@ -27,6 +30,7 @@ let stockProductos =
         precio: 179,
         cantidad: "1lt",
         img: 'public/img/jabon-liq.jpg',
+        unidades:1,
     },
     {
         id: 05, 
@@ -34,6 +38,7 @@ let stockProductos =
         precio: 349,
         cantidad: "1lt",
         img: 'public/img/clarificador.jpg',
+        unidades:1,
     },
     {
         id: 06, 
@@ -41,6 +46,7 @@ let stockProductos =
         precio: 349,
         cantidad: "1lt" ,
         img: 'public/img/alguicida.jpg',
+        unidades:1,
     },
     {
         id: 07, 
@@ -48,6 +54,7 @@ let stockProductos =
         precio: 69,
         cantidad: "1lt" ,
         img: 'public/img/insecticida.jpg',
+        unidades:1,
     },
     {
         id: 08, 
@@ -55,5 +62,6 @@ let stockProductos =
         precio: 3499,
         cantidad: "10kg" ,
         img: 'public/img/fertilizante.jpg',
+        unidades:1,
     },
 ]
