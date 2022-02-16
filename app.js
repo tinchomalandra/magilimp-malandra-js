@@ -67,10 +67,11 @@ function agregarAlCarrito(id){
           <h5 class="card-title">${agregarProducto.nombre}</h5>
           <p class="card-text">ARS ${agregarProducto.precio}</p>
           <p class="card-text"><small class="text-muted">${agregarProducto.cantidad}</small></p>
-          <button type="button" id="btnEliminar${agregarProducto.id}" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+          
         </div>
       </div>
     </div>
+    <button type="button" id="btnEliminar${agregarProducto.id}" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
   </div>`
 
     contenedorCarrito.appendChild(div)
@@ -80,7 +81,7 @@ function agregarAlCarrito(id){
     btnEliminar.addEventListener('click', () => {
         
         btnEliminar.parentElement.remove()
-        // elimina casi todo, pero no borra la imagen y la suma en el total
+        // elimina casi todo, pero no borra la imagen
         carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != agregarProducto.id)
         actualizarCarrito()
     })
