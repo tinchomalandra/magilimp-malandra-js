@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 export default function agregarAlCarrito(id) {
     let repetido = carritoDeCompras.find(productoR => productoR.id == id);
     if (repetido){
-        repetido.cantidad = repetido.cantidad + 1;
+        repetido.cantidad++
         document.getElementById(`cantidad ${repetido.id}`).innerHTML = `<p id=cantidad${repetido.id}>Cantidad:${repetido.cantidad}</p>`;
         actualizarCarrito(carritoDeCompras);
     } else{
